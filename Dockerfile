@@ -4,11 +4,11 @@ MAINTAINER Golfen Guo <golfen.guo@daocloud.io>
 ENV WORDPRESS_VER 4.3
 WORKDIR /
 RUN apt-get update && \
-    apt-get -yq install mysql-client curl unzip wget && \
+    apt-get -yq install mysql-client curl && \
     rm -rf /app && \
-    curl -0L https://cn.wordpress.org/wordpress-4.3-zh_CN.tar.gz | tar zxv && \
+    curl -0L https://wordpress.org/wordpress-4.3.tar.gz | tar zxv && \
     mv /wordpress /app && \
-    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
 RUN a2enmod rewrite
