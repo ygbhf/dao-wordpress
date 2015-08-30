@@ -9,7 +9,7 @@ RUN apt-get update && \
     curl -0L https://cn.wordpress.org/wordpress-4.3-zh_CN.tar.gz | tar zxv && \
     mv /wordpress /app && \
     rm -rf /var/lib/apt/lists/* && \
-    wget https://downloads.wordpress.org/plugin/hermit.zip /app/wp-content/plugins/ && \
+    wget https://downloads.wordpress.org/plugin/hermit.zip /app/wp-content/plugins/hermit.zip && \
     unzip /app/wp-content/plugins/hermit.zip 
 
 RUN sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
